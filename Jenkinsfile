@@ -45,15 +45,9 @@ pipeline{
                 echo "Deployed Successfully"
             }
         }
-        
-        stage('Post Deploy'){
-            steps{
-                echo "Deployed Successfully"                
-            }
-        }
-        
-        
+
     }
+    
     post {
         
         always {
