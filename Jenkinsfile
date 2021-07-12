@@ -43,7 +43,7 @@ pipeline{
             steps{
                 echo "Deploying"
                 echo "Deployed Successfully"
-                sh "npm run dev"
+                
             }
         }
     }
