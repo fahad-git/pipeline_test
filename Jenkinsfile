@@ -4,14 +4,12 @@ pipeline{
     tools {nodejs "Node Installer"}
 
     stages{
-
-
-
         
         stage('Clone'){
            steps{
                 echo "Cloning..."
                 git 'https://github.com/fahad-git/pipeline_test.git'
+                sh "ls"
            }
         }
  
