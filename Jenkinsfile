@@ -33,7 +33,12 @@ pipeline{
             }
         }
         
-
+        stage('JUnit'){
+            steps{
+                echo "JUnit"
+            }
+        }
+        
         stage('Quality-Gate'){
             steps{
                 echo "Tesing...'"
