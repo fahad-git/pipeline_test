@@ -8,9 +8,7 @@ pipeline{
         stage('Setup'){
            steps{
                 echo "Setup initialted..."
-                cd ../
-                ls
-                cd key/
+                sh "ls ../"
                 sh "ssh -p 99 -i 'deployment_Instance_key.pem' ubuntu@ec2-13-233-151-10.ap-south-1.compute.amazonaws.com"
            }
         }
