@@ -32,7 +32,13 @@ pipeline{
                 echo "JUnit"
             }
         }
-
+        
+        stage('Testcases'){
+            steps{
+                echo "Other Testcases"
+            }
+        }
+        
         stage('Quality-Gate'){
             steps{
                 echo "Tesing...'"
