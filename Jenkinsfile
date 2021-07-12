@@ -33,12 +33,7 @@ pipeline{
             }
         }
         
-        stage('Testcases'){
-            steps{
-                echo "Other Testcases"
-            }
-        }
-        
+
         stage('Quality-Gate'){
             steps{
                 echo "Tesing...'"
