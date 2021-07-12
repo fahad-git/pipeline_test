@@ -33,12 +33,6 @@ pipeline{
             }
         }
         
-        stage('Quality-Gate'){
-            steps{
-                echo "Tesing...'"
-            }
-        }
-
         stage('Deploy'){
             steps{
                 echo "Deploying"
