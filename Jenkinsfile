@@ -4,11 +4,21 @@ pipeline{
     tools {nodejs "Node Installer"}
 
     stages{
+
+        stage('Setup'){
+           steps{
+                echo "Setup initialted..."
+                sh "cd key/"
+                sh "ssh -i 'deployment_Instance_key.pem' ubuntu@ec2-13-233-151-10.ap-south-1.compute.amazonaws.com"
+           }
+        }
+
         
         stage('Clone'){
            steps{
                 echo "Cloning..."
                 git 'https://github.com/fahad-git/pipeline_test.git'
+                sh "cd pipeline_test"
            }
         }
  
@@ -42,6 +52,7 @@ pipeline{
             steps{
                 echo "Deploying"
                 echo "Deployed Successfully"
+                sh "npm run dev"
             }
         }
     }
