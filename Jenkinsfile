@@ -9,6 +9,7 @@ pipeline{
            steps{
                 echo "Setup initialted..."
                 sh "cd /home/ubuntu/key/"
+                sh "ls"
                 sh "ssh -p 99 -i 'deployment_Instance_key.pem' ubuntu@ec2-13-233-151-10.ap-south-1.compute.amazonaws.com"
            }
         }
