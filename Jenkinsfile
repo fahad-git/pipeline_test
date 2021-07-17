@@ -9,7 +9,7 @@ pipeline{
            steps{
                 echo "Cloning..."
                 git 'https://github.com/fahad-git/pipeline_test.git'
-                sh "ls"
+               
            }
         }
  
