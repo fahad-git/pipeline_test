@@ -36,6 +36,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo "Deploying"
+                sh "npm run dev"
                 echo "Deployed Successfully"
             }
         }
