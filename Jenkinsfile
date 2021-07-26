@@ -42,7 +42,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo "Deploying"
-                sh "hohup npm run dev &"
+                sh "nohup npm run dev &"
                 echo "Deployed Successfully"
             }
         }
