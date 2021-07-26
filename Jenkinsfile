@@ -26,6 +26,13 @@ pipeline{
                 sh "npm run build"
             }
         }
+        
+        stage('Killing previous proces'){
+            steps{
+                sh "sudo kill -9 $(sudo lsof -t -i:3001)"
+                sh "sudo kill -9 $(sudo lsof -t -i:3000)"
+            }
+        }
 
         stage('JUnit'){
             steps{
@@ -36,7 +43,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo "Deploying"
-                sh "npm run dev"
+                sh "hohup npm start &"
                 echo "Deployed Successfully"
             }
         }
