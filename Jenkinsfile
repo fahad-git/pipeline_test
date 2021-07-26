@@ -29,8 +29,7 @@ pipeline{
         
         stage('Killing previous proces'){
             steps{
-                sh "sudo kill -9 $(sudo lsof -t -i:3001)"
-                sh "sudo kill -9 $(sudo lsof -t -i:3000)"
+                sh "if sudo lsof -t -i:3001; then kill -9 `sudo lsof -t -i:3001`; fi"
             }
         }
 
@@ -43,7 +42,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo "Deploying"
-                sh "hohup npm start &"
+                sh "hohup npm run dev &"
                 echo "Deployed Successfully"
             }
         }
