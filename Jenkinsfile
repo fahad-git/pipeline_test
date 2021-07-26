@@ -29,7 +29,6 @@ pipeline{
         
         stage('Killing previous proces'){
             steps{
-                sh "sudo su"
                 sh "if sudo lsof -t -i:3001; then kill -9 `sudo lsof -t -i:3001`; fi"
             }
         }
